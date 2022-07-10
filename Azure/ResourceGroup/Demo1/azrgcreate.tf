@@ -1,5 +1,7 @@
+# Terraform Configuration File to create a Resource Group
+
 terraform {
-  required_version = ">= 0.12.0"
+  required_version = ">= 1.2.4"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -13,7 +15,10 @@ provider "azurerm" {
   }
 }
 
+/*
+  Description: Create a Resource Group
+*/
 resource "azurerm_resource_group" "rg-womd-test-001" {
-  name     = "rg-womd-test-001"
-  location = "eastus"
+  name     = "rg-womd-test-001" // Azure Resource Group Name
+  location = "eastus"           // Azure Region
 }
