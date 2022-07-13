@@ -6,7 +6,7 @@ I am learning Terraform from different books, website, and video courses.
 terraform init
 terraform validate
 terraform plan
-terraform apply
+terraform apply -auto-approve
 terraform show
 terraform destroy
 ```
@@ -16,4 +16,3 @@ az login
 az account list
 az account list-locations -o table
 ```
-
