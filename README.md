@@ -4,6 +4,7 @@ I am learning Terraform from different books, website, and video courses.
 
 ```terraform
 terraform init
+terraform init -upgrade
 terraform validate
 terraform plan
 terraform apply -auto-approve
