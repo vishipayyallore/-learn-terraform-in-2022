@@ -1,10 +1,5 @@
-# required for AWS
-variable "access_key" {}
-
-variable "secret_key" {}
-
 variable "region" {
-  default = "us-east-1"
+  default = "us-west-2" # Oregon
 }
 
 variable "root_domain" {

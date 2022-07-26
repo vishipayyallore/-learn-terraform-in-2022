@@ -10,9 +10,8 @@ terraform {
 }
 
 provider "aws" {
-  region     = var.region
-  access_key = var.access_key
-  secret_key = var.secret_key
+  # Configuration options
+  region = var.region
 }
 
 resource "aws_s3_bucket" "blog" {
