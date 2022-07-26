@@ -5,11 +5,11 @@
 
 # Terraform/Settings Block
 terraform {
-  required_version = ">= 1.2.4"
+  required_version = ">= 1.2.5"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+      version = "~> 3.15"
     }
   }
 }
@@ -22,8 +22,8 @@ provider "azurerm" {
 
 # Resource Block - Resource Group
 resource "azurerm_resource_group" "rg-womd-test-001" {
-  name     = "rg-womd-test-001" // Azure Resource Group Name
-  location = "eastus"           // Azure Region
+  name     = var.resource_group_name     // Azure Resource Group Name
+  location = var.resource_group_location // Azure Region
 
   tags = {
     environment = "test"
