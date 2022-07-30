@@ -10,11 +10,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2" # Oregon
+  region = var.region # Oregon
 }
 
 resource "aws_vpc" "web_vpc" {
-  cidr_block           = "192.168.100.0/24"
+  cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = true
 
   tags = {
@@ -24,8 +24,8 @@ resource "aws_vpc" "web_vpc" {
 
 resource "aws_subnet" "frontend_subnet" {
   vpc_id            = aws_vpc.web_vpc.id
-  cidr_block        = "192.168.100.0/24"
-  availability_zone = "us-west-2a"
+  cidr_block        = var.fronentend_subnet_cidr_block
+  availability_zone = var.availability_zone
   tags = {
     Name = "web_subnet1"
   }
