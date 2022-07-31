@@ -14,12 +14,19 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_s3_bucket" "blog" {
-  bucket = "${var.blog_bucket_subdomain}.${var.root_domain}"
+resource "aws_s3_bucket" "eshop" {
+  bucket = "${var.eshop_bucket_subdomain}.${var.root_domain}"
+
+  tags = {
+    "name"    = "s3_bucket_eshop"
+    "purpose" = "eShop Static Website"
+    "contact" = "Swamy PKV"
+  }
+
 }
 
-resource "aws_s3_bucket_website_configuration" "blog" {
-  bucket = aws_s3_bucket.blog.id
+resource "aws_s3_bucket_website_configuration" "eshop" {
+  bucket = aws_s3_bucket.eshop.id
 
   index_document {
     suffix = "index.html"
@@ -30,14 +37,14 @@ resource "aws_s3_bucket_website_configuration" "blog" {
   }
 }
 
-resource "aws_s3_bucket_acl" "blog_bucket_acl" {
-  bucket = aws_s3_bucket.blog.id
+resource "aws_s3_bucket_acl" "eshop_bucket_acl" {
+  bucket = aws_s3_bucket.eshop.id
   acl    = "public-read"
 }
 
 resource "aws_s3_object" "upload_object" {
   for_each     = fileset("content/", "*")
-  bucket       = aws_s3_bucket.blog.id
+  bucket       = aws_s3_bucket.eshop.id
   key          = each.value
   source       = "content/${each.value}"
   etag         = filemd5("content/${each.value}")
@@ -45,7 +52,7 @@ resource "aws_s3_object" "upload_object" {
 }
 
 resource "aws_s3_bucket_policy" "read_access_policy" {
-  bucket = aws_s3_bucket.blog.id
+  bucket = aws_s3_bucket.eshop.id
   policy = <<POLICY
           {
               "Version": "2012-10-17",
@@ -58,7 +65,7 @@ resource "aws_s3_bucket_policy" "read_access_policy" {
                           "s3:GetObject"
                       ],
                       "Resource": [
-                          "arn:aws:s3:::${aws_s3_bucket.blog.id}/*"
+                          "arn:aws:s3:::${aws_s3_bucket.eshop.id}/*"
                       ]
                   }
               ]

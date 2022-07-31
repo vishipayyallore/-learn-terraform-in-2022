@@ -3,10 +3,10 @@ variable "region" {
 }
 
 variable "root_domain" {
-  default = "s3-bucket-dev-001"
+  default = "s3-bucket-dev-002"
 }
 
-variable "blog_bucket_subdomain" {
-  default = "blog"
+variable "eshop_bucket_subdomain" {
+  default = "eshop"
 }
 
