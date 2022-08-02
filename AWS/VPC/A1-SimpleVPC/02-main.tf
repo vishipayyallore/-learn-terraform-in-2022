@@ -11,11 +11,11 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-west-2" # Oregon
+  region = var.region
 }
 
 resource "aws_vpc" "vpc_for_web" {
-  cidr_block           = "192.168.100.0/24"
+  cidr_block           = var.cidr_block
   enable_dns_hostnames = true
   tags = {
     Name = "VPC for Web"
