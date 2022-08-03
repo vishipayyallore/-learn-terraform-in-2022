@@ -17,3 +17,13 @@ variable "availability_zone" {
   type    = string
   default = "us-west-2a"
 }
+
+variable "ami" {
+  type    = string
+  default = "ami-0528a5175983e7f28"
+}
+
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+}

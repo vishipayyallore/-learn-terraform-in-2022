@@ -10,10 +10,10 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region # Oregon
+  region = var.region
 }
 
-resource "aws_vpc" "web_vpc" {
+resource "aws_vpc" "vpc_for_web_server" {
   cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = true
 
@@ -23,24 +23,27 @@ resource "aws_vpc" "web_vpc" {
 }
 
 resource "aws_subnet" "frontend_subnet" {
-  vpc_id            = aws_vpc.web_vpc.id
+  vpc_id            = aws_vpc.vpc_for_web_server.id
   cidr_block        = var.fronentend_subnet_cidr_block
   availability_zone = var.availability_zone
   tags = {
-    Name = "web_subnet1"
+    Name = "frontend_subnet"
   }
 }
 
 
 resource "aws_instance" "web_server" {
-  ami           = "ami-0528a5175983e7f28"
-  instance_type = "t2.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
   subnet_id     = aws_subnet.frontend_subnet.id
+
   root_block_device {
     delete_on_termination = true
     volume_size           = 10
   }
+
   tags = {
     Name = "web_server"
   }
+
 }
