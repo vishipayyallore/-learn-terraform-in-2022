@@ -34,9 +34,9 @@ resource "aws_subnet" "web_subnets" {
   # element retrieves a list element at a given index
   availability_zone = element(var.availability_zones, count.index)
 
-  # tags {
-  #   Name = "Frontend Subnet ${count.index + 1}"
-  # }
+  tags = {
+    Name = "Frontend Subnet ${count.index + 1}"
+  }
 }
 
 
