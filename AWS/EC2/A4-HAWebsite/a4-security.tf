@@ -1,6 +1,6 @@
-resource "aws_security_group" "elb_sg" {
+resource "aws_security_group" "sg_for_elb" {
 
-  name        = "ELB Security Group"
+  name        = "Security Group for ELB"
   description = "Allow incoming HTTP traffic from the internet"
   vpc_id      = aws_vpc.vpc_for_web.id
 
@@ -20,9 +20,9 @@ resource "aws_security_group" "elb_sg" {
   }
 }
 
-resource "aws_security_group" "web_sg" {
+resource "aws_security_group" "sg_for_web" {
 
-  name        = "Web Server Security Group"
+  name        = "Security Group for Web Server"
   description = "Allow HTTP traffic from ELB security group"
   vpc_id      = aws_vpc.vpc_for_web.id
 
@@ -31,7 +31,7 @@ resource "aws_security_group" "web_sg" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = ["${aws_security_group.elb_sg.id}"]
+    security_groups = ["${aws_security_group.sg_for_elb.id}"]
   }
 
   # Allow all outbound traffic
