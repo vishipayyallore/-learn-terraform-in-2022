@@ -1,9 +1,9 @@
 resource "aws_elb" "web" {
 
   name            = "web-elb"
-  subnets         = ["${aws_subnet.subnet_for_public.*.id}"]
+  subnets         = ["${join("\\,", aws_subnet.subnet_for_public.*.id)}"]
   security_groups = ["${aws_security_group.sg_for_elb.id}"]
-  instances       = ["${aws_instance.ec2_for_web.*.id}"]
+  instances       = ["${join("\\,", aws_instance.ec2_for_web.*.id)}"]
 
   # Listen for HTTP requests and distribute them to the instances
   listener {
