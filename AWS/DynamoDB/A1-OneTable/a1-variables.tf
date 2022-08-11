@@ -5,12 +5,12 @@ variable "region" {
 
 variable "dynamodb_table_name" {
   type    = string
-  default = "example-name"
+  default = "employees"
 }
 
 variable "dynamodb_table_hash_key" {
   type    = string
-  default = "exampleHashKey"
+  default = "employeeId"
 }
 
 variable "dynamodb_table_read_capacity" {

@@ -21,7 +21,7 @@ resource "aws_dynamodb_table" "example" {
 
 
   attribute {
-    name = "exampleHashKey"
+    name = "employeeId"
     type = "S"
   }
 
@@ -33,11 +33,11 @@ resource "aws_dynamodb_table_item" "example" {
 
   item = <<ITEM
             {
-            "exampleHashKey": {"S": "something"},
-            "one": {"N": "11111"},
-            "two": {"N": "22222"},
-            "three": {"N": "33333"},
-            "four": {"N": "44444"}
+            "employeeId": {"S": "E101"},
+            "name": {"S": "Sri Varu"},
+            "age": {"N": "18"},
+            "salary": {"N": "1234.5678"},
+            "designation": {"S": "CEO"}
             }
         ITEM
 }
