@@ -51,6 +51,25 @@ resource "aws_s3_object" "upload_object" {
   content_type = "text/html"
 }
 
+resource "aws_s3_object" "upload_cssfiles" {
+  for_each     = fileset("content/styles/", "*")
+  bucket       = aws_s3_bucket.eshop.id
+  key          = each.value
+  source       = "content/styles/${each.value}"
+  etag         = filemd5("content/styles/${each.value}")
+  content_type = "text/css"
+}
+
+resource "aws_s3_object" "upload_jsfiles" {
+  for_each     = fileset("content/scripts/", "*")
+  bucket       = aws_s3_bucket.eshop.id
+  key          = each.value
+  source       = "content/scripts/${each.value}"
+  etag         = filemd5("content/scripts/${each.value}")
+  content_type = "application/javascript"
+}
+
+
 resource "aws_s3_bucket_policy" "read_access_policy" {
   bucket = aws_s3_bucket.eshop.id
   policy = <<POLICY
