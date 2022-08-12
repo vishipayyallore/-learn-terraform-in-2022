@@ -5,7 +5,9 @@ I am learning Terraform from different books, website, and video courses.
 ```
 ssh -i "vm-jenkinsserver.pem" username@YourFQDN.compute.amazonaws.com
 
-eksctl create cluster --name ekscluster-aug2022 --region us-east-2 --node-type t2.medium 
+eksctl create cluster --name ekscluster-12aug2022 --region us-east-2 --node-type t2.medium 
+
+eksctl delete cluster --region=us-east-2 --name=ekscluster-12aug2022
 ```
 
 ```terraform
