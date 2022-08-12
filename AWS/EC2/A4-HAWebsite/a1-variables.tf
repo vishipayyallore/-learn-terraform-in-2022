@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-east-2" # Ohio
+  default = "us-west-2" # Oregon
 }
 
 variable "network_cidr_block" {
@@ -8,7 +8,7 @@ variable "network_cidr_block" {
 }
 
 variable "availability_zones" {
-  default = ["us-east-2a", "us-east-2b"]
+  default = ["us-west-2a", "us-west-2b"]
 }
 
 variable "instance_count" {
@@ -17,7 +17,7 @@ variable "instance_count" {
 
 variable "ami_ids" {
   default = {
-    "us-east-2" = "ami-0fb83677"
+    "us-west-2" = "ami-0fb83677"
     "us-east-1" = "ami-97785bed"
   }
 }

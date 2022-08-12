@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-east-2" # Ohio
+  default = "us-west-2" # Oregon
 }
 
 variable "vpc_cidr_block" {
@@ -15,7 +15,7 @@ variable "fronentend_subnet_cidr_block" {
 
 variable "availability_zone" {
   type    = string
-  default = "us-east-2a"
+  default = "us-west-2a"
 }
 
 variable "ami" {

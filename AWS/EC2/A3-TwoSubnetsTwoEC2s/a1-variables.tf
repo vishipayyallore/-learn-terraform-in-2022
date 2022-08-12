@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-east-2" # Ohio
+  default = "us-west-2" # Oregon
 }
 
 variable "vpc_cidr_block" {
@@ -20,17 +20,17 @@ variable "apig_subnet_cidr_block" {
 
 # variable "availability_zone_1" {
 #   type    = string
-#   default = "us-east-2a"
+#   default = "us-west-2a"
 # }
 
 # variable "availability_zone_2" {
 #   type    = string
-#   default = "us-east-2b"
+#   default = "us-west-2b"
 # }
 
 # Example of a list variable
 variable "availability_zones" {
-  default = ["us-east-2a", "us-east-2b"]
+  default = ["us-west-2a", "us-west-2b"]
 }
 
 # Example of an integer variable
@@ -46,7 +46,7 @@ variable "instance_count" {
 # Example of a map variable
 variable "ami_ids" {
   default = {
-    "us-east-2" = "ami-0fb83677"
+    "us-west-2" = "ami-0fb83677"
     "us-east-1" = "ami-97785bed"
   }
 }

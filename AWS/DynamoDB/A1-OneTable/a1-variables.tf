@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-east-2" # Ohio
+  default = "us-west-2" # Oregon
 }
 
 variable "dynamodb_table_name" {
