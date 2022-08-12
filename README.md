@@ -2,6 +2,12 @@
 
 I am learning Terraform from different books, website, and video courses.
 
+```
+ssh -i "vm-jenkinsserver.pem" username@YourFQDN.compute.amazonaws.com
+
+eksctl create cluster --name ekscluster-aug2022 --region us-east-2 --node-type t2.medium 
+```
+
 ```terraform
 terraform init
 terraform init -upgrade
