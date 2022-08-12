@@ -45,7 +45,7 @@ resource "aws_instance" "ec2_for_web" {
   count = var.instance_count
   # lookup returns a map value for a given key
 
-  ami = lookup(var.ami_ids, "us-west-2")
+  ami = lookup(var.ami_ids, "us-east-2")
 
   instance_type = "t2.micro"
 

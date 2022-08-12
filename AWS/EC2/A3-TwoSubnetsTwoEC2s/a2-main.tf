@@ -44,7 +44,7 @@ resource "aws_instance" "web_server" {
   count = var.instance_count
 
   # lookup returns a map value for a given key
-  ami = lookup(var.ami_ids, "us-west-2")
+  ami = lookup(var.ami_ids, "us-east-2")
 
   instance_type = var.instance_type
 

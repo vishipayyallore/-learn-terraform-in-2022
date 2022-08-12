@@ -1,5 +1,5 @@
 variable "region" {
-  default = "us-west-2" # Oregon
+  default = "us-east-2" # Ohio
 }
 
 variable "root_domain" {

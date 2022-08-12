@@ -11,7 +11,7 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-west-2" # Oregon
+  region = "us-east-2" # Ohio
 }
 
 resource "aws_vpc" "vpc_for_web" {

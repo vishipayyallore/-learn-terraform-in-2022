@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-west-2" # Oregon
+  default = "us-east-2" # Ohio
 }
 
 variable "vpc_cidr_block" {
@@ -20,12 +20,12 @@ variable "apig_subnet_cidr_block" {
 
 variable "availability_zone_1" {
   type    = string
-  default = "us-west-2a"
+  default = "us-east-2a"
 }
 
 variable "availability_zone_2" {
   type    = string
-  default = "us-west-2b"
+  default = "us-east-2b"
 }
 
 variable "ami" {

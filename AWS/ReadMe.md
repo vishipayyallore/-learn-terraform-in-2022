@@ -21,6 +21,6 @@ terraform destroy
 ## Few AWS CLI Commands
 
 ```AWS CLI
-aws ec2 describe-vpcs --region us-west-2 --filter "Name=tag:Name,Values=VPC for Web"
-aws ec2 describe-vpc-attribute --region us-west-2 --attribute enableDnsHostnames --vpc-id <VPC_ID> vpc-040d4bcdbe1a1f037
+aws ec2 describe-vpcs --region us-east-2 --filter "Name=tag:Name,Values=VPC for Web"
+aws ec2 describe-vpc-attribute --region us-east-2 --attribute enableDnsHostnames --vpc-id <VPC_ID> vpc-040d4bcdbe1a1f037
 ```
