@@ -2,13 +2,21 @@
 
 I am learning Terraform from different books, website, and video courses.
 
-```
-ssh -i "vm-jenkinsserver.pem" username@YourFQDN.compute.amazonaws.com
+## Terraform Logs
 
-eksctl create cluster --name ekscluster-12aug2022 --region us-east-2 --node-type t2.medium 
+**Reference(s):**
 
-eksctl delete cluster --region=us-east-2 --name=ekscluster-12aug2022
-```
+> 1. https://www.terraform.io/cli/config/environment-variables
+
+**Environment Variables**
+
+![Environment Variables |150x150](./Documentation/Images/EnvironmentVariables.PNG)
+
+**Terraform Logs**
+
+![Terraform Logs |150x150](./Documentation/Images/TerraformLogs.PNG)
+
+## Terraform Commands
 
 ```terraform
 terraform init
@@ -20,13 +28,27 @@ terraform show
 terraform destroy
 ```
 
-```AzureCLI
+## Azure CLI
+
+```bash
 az login
 az account list
 az account list-locations -o table
 ```
 
+## Create EKS Cluster
+
+```bash
+ssh -i "vm-jenkinsserver.pem" username@YourFQDN.compute.amazonaws.com
+
+eksctl create cluster --name ekscluster-12aug2022 --region us-east-2 --node-type t2.medium
+
+eksctl delete cluster --region=us-east-2 --name=ekscluster-12aug2022
 ```
+
+## Install Terraform on Windows
+
+```bash
 mkdir C:\terraform
 cd C:\terraform
 
@@ -42,7 +64,9 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 terraform version
 ```
 
-```
+## Install Terraform on Linux
+
+```bash
 cd ~/
 
 wget https://releases.hashicorp.com/terraform/1.2.7/terraform_1.2.7_linux_amd64.zip
