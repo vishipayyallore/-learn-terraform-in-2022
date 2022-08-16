@@ -16,6 +16,12 @@ I am learning Terraform from different books, website, and video courses.
 
 ![Terraform Logs |150x150](./Documentation/Images/TerraformLogs.PNG)
 
+## About Terraform State
+
+**State in Terraform Cloud**
+
+![State in Terraform Cloud |150x150](./Documentation/Images/StateInTerraformCloud.PNG)
+
 ## Terraform Commands
 
 ```terraform
