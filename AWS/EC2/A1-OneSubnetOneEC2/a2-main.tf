@@ -18,7 +18,7 @@ resource "aws_vpc" "vpc_for_web_server" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "Web VPC"
+    Name = "VPC for Web Server"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "frontend_subnet" {
   cidr_block        = var.fronentend_subnet_cidr_block
   availability_zone = var.availability_zone
   tags = {
-    Name = "frontend_subnet"
+    Name = "Frontend Subnet"
   }
 }
 
