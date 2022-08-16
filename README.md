@@ -16,6 +16,12 @@ I am learning Terraform from different books, website, and video courses.
 
 ![Terraform Logs |150x150](./Documentation/Images/TerraformLogs.PNG)
 
+## About Terraform State
+
+**State in Terraform Cloud**
+
+![State in Terraform Cloud |150x150](./Documentation/Images/StateInTerraformCloud.PNG)
+
 ## Terraform Commands
 
 ```terraform
@@ -76,4 +82,12 @@ unzip terraform_1.2.7_linux_amd64.zip
 sudo mv terraform /usr/local/bin
 
 terraform version
+```
+
+```
+wget https://releases.hashicorp.com/terraform/1.2.7/terraform_1.2.7_linux_amd64.zip
+sudo unzip terraform_1.2.7_linux_amd64.zip -d /usr/local/bin/
+rm terraform_1.2.7_linux_amd64.zip
+terraform version
+
 ```

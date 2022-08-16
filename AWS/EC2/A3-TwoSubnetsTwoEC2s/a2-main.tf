@@ -39,7 +39,6 @@ resource "aws_subnet" "web_subnets" {
   }
 }
 
-
 resource "aws_instance" "web_server" {
   count = var.instance_count
 
